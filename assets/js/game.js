@@ -10,8 +10,15 @@ var enemyNames = ["Robo Raf", "Kobe Droid", "AI-13-Vic"];
 var enemyHealth = 50 ;
 var enemyAttack = 12 ;
 
+console.log(enemyNames);
+console.log(enemyNames.length);
+console.log(enemyNames[0]);
+console.log(enemyNames[3]);
+
 //fight function
+  
 var fight = function(enemyName) {
+
     while (playerHealth > 0 && enemyHealth > 0) {
         // ask player if they'd like to fight or run
         var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
@@ -66,4 +73,22 @@ var fight = function(enemyName) {
         }
       }
     };
-fight();
+ for (var i = 0; i < enemyNames.length; i++) {
+   if (playerHealth > 0) {
+     //tells player which round theyre on.
+     window.alert("Welcome to Robot Gladiators nerd! Round " + ( i + 1 ) );
+   }
+   else {
+     window.alert("You lost your robot in battle nerd! Game Over!");
+     break;
+   }
+
+   //new enemy based on index of enemyNames array
+   var pickedEnemyName = enemyNames[i];
+
+   //reset enemyHealth
+   enemyHealth = 50;
+
+
+   fight(pickedEnemyName)
+ }

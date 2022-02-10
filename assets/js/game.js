@@ -1,23 +1,26 @@
 var playerName = window.prompt("What is your robot's name?");
-console.log(playerName)
 
 //variables for player stats
 var playerHealth = 100 ;
 var playerAttack = 10 ;
 var playerMoney = 10;
 
+//console.log multiple values this way
+//console.log(playerName, playerAttack, playerHealth, playerMoney);
+
 //variables for enemy stats
-var enemyName = "Rafael the Robot";
+var enemyNames = ["Robo Raf", "Kobe Droid", "AI-13-Vic"];
+//console.log(enemyNames);
 var enemyHealth = 50 ;
 var enemyAttack = 12 ;
 
-var fight = function() {
+//fight function
+var fight = function(enemyName) {
     //tells player round is starting
  window.alert("Welcome to Robot Gladiators Nerd!");
-};
-fight();
+
 //prompt player to pick fight or skip
-var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'fight' or 'skip' to choose.")
+var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'fight' or 'skip' to choose.");
 // check to see the prompt response
 console.log (promptFight);
 
@@ -46,7 +49,7 @@ playerHealth = playerHealth - enemyAttack ;
 console.log(
     enemyName + " attacked " + playerName + " . " + playerName + " now has " + playerHealth + "health remaining.")
 
-    //check players health
+    //check players health if its 0, player dies if not they keep fighting.
     if (playerHealth <=0){
         window.alert(playerName + "has died!");
     }
@@ -71,3 +74,8 @@ console.log(
 } else{
     window.alert("You need to choose a valid option. Try again.");
 }
+};
+//fight function to start game
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+  }

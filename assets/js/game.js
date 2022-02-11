@@ -102,7 +102,7 @@ var startGame = function(){
  endGame();
 };
 
-var engGame = function(){
+var endGame = function(){
   window.alert("The game has now ended. Let's see how you did!");
 
   if (playerHealth > 0) {

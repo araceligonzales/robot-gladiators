@@ -110,7 +110,7 @@ var endGame = function(){
     window.alert("Great job, you've survived the game! You now have a score of " + playerInfo.money + ".");
   } 
   else {
-    window.alert("You've lost your robot in battle.");
+    window.alert("You've lost your robot in battle. L.");
   }
 
   var playAgainConfirm = window.confirm("Would you like to play again?");
@@ -146,7 +146,7 @@ var shop = function() {
       //do nothing, so end function
       break;
     default:
-      window.alert("You did not pick a valid option. Try again.");
+      window.alert("You did not pick a valid option goofy. Try again.");
 
       //call shop again to force player to pick valid option.
       shop();
@@ -157,9 +157,19 @@ var shop = function() {
 /*END GAME FUNCTIONS */
 
 /* GAME INFO / VARIABLES*/
+var getPlayerName = function(){
+  var name = "";
+  //add loop here with prompt and condition 
+  while (name === "" || name === null) {
+    name = prompt('What is your robots name?');
+  }
+  console.log('ur name is ' + name);
+  return name;
+}
+
 //player info
 var playerInfo = {
-  name:window.prompt("What's your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10 ,
@@ -174,7 +184,7 @@ var playerInfo = {
     this.health += 20;
     this.money -= 7;
     } else {
-      window.alert('you dont have enough money!!');
+      window.alert('you dont have enough money!! Broke...');
     }
   }, 
   upgradeAttack: function() {
@@ -183,7 +193,7 @@ var playerInfo = {
     this.attack += 6;
     this.money -= 7;
     } else {
-      window.alert('you dont have enough money!');
+      window.alert('you dont have enough money!! Broke...');
     }
   }
 };
